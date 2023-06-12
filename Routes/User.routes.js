@@ -48,7 +48,7 @@ UserRoutes.post("/login", async (req, res) => {
           const token = jwt.sign({ name: user.name }, process.env.secret, {
             expiresIn: "7d",
           });
-          res.status(200).json({ msg: "Login Success", token });
+          res.status(200).json({ msg: "Login Success", token, user });
         }
       });
     } else {
